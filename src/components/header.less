@@ -1,0 +1,50 @@
+@import '../assets/less/variables.less';
+
+.header {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: @header-height;
+    background: @background-header;
+    box-shadow: 0 11px 15px -13px @shadow-color-main;
+    .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: inherit;
+        max-width: 1600px;
+        width: 100%;
+        padding: 0 15px;
+        .fa {
+            font-size: 24px;
+            color: @color-title;
+        }
+        .header-logged_in {
+            .fa {
+                transition: 0.4s ease all;
+                cursor: pointer;
+                &:hover {
+                    color: @color-logout;
+                }
+            }
+        }
+    }
+}
+
+.header-logo-container {
+    display: flex;
+    align-items: center;
+    .fa-eercast {
+        margin-right: 10px;
+        font-size: 27px;
+        color: @color-title;
+    }
+    .header-logo {
+        color: @color-title;
+        font-size: 23px;
+        font-weight: bold;
+    }            
+}

@@ -1,0 +1,44 @@
+@import '../../assets/less/variables.less';
+
+.rules-container {
+    .rule-item {
+        height: 100% !important;
+        .rule-description {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            .chip {
+                font-size: 14px;
+                font-weight: 400;
+                padding: 5px 10px;
+                margin-right: 6px;
+                color: @color-chip-text-default;
+                background: @color-chip-bg-default;
+                box-shadow: 0 2px 0 @shadow-color-chip-default;
+                border-radius: 4px;
+                &.high-priority {
+                    color: @color-white;
+                    background: #e27a7a;
+                    box-shadow: 0 2px 0 #bc5454;
+                    .param {
+                        color: #b81100;
+                        font-weight: bold;
+                    }
+                }
+                .param {
+                    color: #2980b9;
+                    font-weight: bold;
+                }
+            }
+        }
+        .bottom-container {
+            .project-id,
+            .project-link {
+                position: static !important;
+            }
+            .project-link {
+                float: right;
+            }
+        }
+    }
+}

@@ -1,0 +1,158 @@
+@import '../assets/less/styles.less';
+
+.main-wrapper {
+    height: inherit;
+    width: inherit;
+}
+
+.project_page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    .page-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 800px;
+        padding: 20px;
+        .title {
+            color: @color-title;
+            font-size: 24px;
+            margin: 0 0 15px;
+        }
+        .project-container {
+            width: 100%;
+            .project,
+            .rule-item {
+                position: relative;
+                height: 100px;
+                text-decoration: none;
+                border-radius: 4px;
+                padding: 10px 15px;
+                border: 1px solid darken(@background-main, 20%);
+                box-shadow: 0 9px 18px -11px @shadow-color-main;
+                transition: 0.4s ease background;
+                cursor: pointer;
+                &:not(:last-child) {
+                    margin-bottom: 15px;
+                }
+                &:hover {
+                    background: lighten(@background-main, 5%);
+                    box-shadow: 0 13px 18px -11px @shadow-color-main;
+                    .project-header .project-title,
+                    .project-description,
+                    .description-standard {
+                        color: @color-title;
+                    }
+                    .project-id {
+                        color: lighten(@color-title, 35%);
+                    }
+                    .project-controls {
+                        .fa-eye-slash,
+                        .fa-eye {
+                            color: @color-title;
+                            &:hover {
+                                color: @color-eye;
+                            }
+                        }
+                        .fa-times {
+                            color: @color-title;
+                            &:hover {
+                                color: @color-times;
+                            }
+                        }
+                        .fa-pencil {
+                            color: @color-title;
+                            &:hover {
+                                color: @color-pencil;
+                            }
+                        }
+                    }
+                }
+                .project-header {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 5px;
+                    .project-title {
+                        color: lighten(@color-title, 15%);
+                        font-size: 15px;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        transition: 0.4s ease all;
+                    }
+                }
+                .project-description,
+                .description-standard {
+                    color: lighten(@color-title, 25%);
+                    font-size: 15px;
+                    transition: 0.4s ease all;
+                }
+                .project-controls {
+                    display: flex;
+                    justify-content: space-between;
+                    position: absolute;
+                    right: 15px;
+                    top: 10px;
+                    width: 64px;
+                    font-size: 18px;
+                    .fa {
+                        color: lighten(@color-title, 40%);
+                        transition: 0.4s ease all;
+                        &:hover {
+                            color: @color-title;
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .project-id {
+                    position: absolute;
+                    font-size: 14px;
+                    color: lighten(@color-title, 45%);
+                    left: 15px;
+                    bottom: 10px;
+                    transition: 0.4s ease all;
+                }
+                .project-link {
+                    position: absolute;
+                    right: 15px;
+                    bottom: 10px;
+                    font-size: 14px;
+                    color: @color-pencil;
+                    &:hover {
+                        color: darken(@color-pencil, 15%);
+                    }
+                }
+                &.disabled {
+                    border: 1px solid darken(@background-main, 8%);
+                    .project-header,
+                    .project-description,
+                    .description-standard,
+                    .project-controls {
+                        transition: 0.4s ease all;
+                        opacity: 0.3;
+                    }
+                    &:hover {
+                        .project-controls {
+                            opacity: 1;
+                        }    
+                    }
+                }
+            }
+            .high-priority {
+                border: 0;
+                color: @color-white;
+                background-color: @color-button-danger;
+                
+            }
+            .not_active {
+                opacity: 0.4;
+                height: 120px !important;
+                &:hover {
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
+}

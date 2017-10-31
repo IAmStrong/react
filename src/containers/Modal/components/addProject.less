@@ -1,0 +1,66 @@
+@import '../../../assets/less/variables.less';
+
+.project-add,
+.project-edit,
+.project-remove,
+.popup-standard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .project-title {
+        position: relative;
+        color: @color-title;
+        margin: 0 0 5px;
+        padding: 10px;
+        text-align: center;
+        background: @color-bg-neutral;
+        border-radius: 4px;
+    }
+    .project-name {
+        color: lighten(@color-title, 15%);
+    }
+    .link-container,
+    .description-container {
+        margin-top: 5px;
+        padding: 15px;
+        background: @color-bg-neutral;
+        font-size: 15px;
+        text-align: center;
+        border-radius: 4px;
+        .project-link {
+            color: lighten(@color-title, 25%);
+            .link-highlight {
+                color: @color-title;
+            }
+        }
+    }
+    .button-container {
+        margin-top: 15px;
+        text-align: center;
+        .button-save {
+            .fa-check {
+                font-size: 15px;
+                margin-right: 10px;
+            }
+        }
+        .button-remove {
+            .fa-times {
+                font-size: 16px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.project-add,
+.project-edit {
+    width: 500px;
+}
+
+.project-remove {
+    min-width: 300px;
+    .text-container {
+        margin: 10px 0;
+        text-align: center;
+    }
+}

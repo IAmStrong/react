@@ -1,0 +1,12 @@
+@import '../assets/less/variables.less';
+
+.scrollbar {
+    position: fixed;
+    top: ~"calc(@{header-height} - @{scrollbar-height})";
+    left: 0;
+    width: 100%;
+    transition: 0.4s all ease;
+    height: @scrollbar-height;
+    background-color: @color-scrollbar;
+    z-index: 1;
+}

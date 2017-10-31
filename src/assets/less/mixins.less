@@ -1,0 +1,23 @@
+@font-face {
+    .font-face('Open Sans', 'OpenSans', normal, normal);
+}
+
+@font-face {
+    .font-face('Open Sans', 'OpenSans-Light', 300, normal);
+}
+
+@font-face {
+    .font-face('Open Sans', 'OpenSans-Bold', bold, normal);
+}
+
+.font-face (@family, @name, @weight, @style) {
+    font-family: @family;
+    src: url('../fonts/@{name}.eot');
+    src: url('../fonts/@{name}.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/@{name}.woff2') format('woff2'),
+        url('../fonts/@{name}.woff') format('woff'),
+        url('../fonts/@{name}.ttf') format('truetype'),
+        url('../fonts/@{name}.svg#@{name}') format('svg');
+    font-weight: @weight;
+    font-style: @style;
+}
